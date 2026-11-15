@@ -1,0 +1,42 @@
+{
+  "name": "dsh-model-sorter",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "模型选择器排序插件：字母索引栏（A–Z、#）+ 版本倒序（GLM-5.3 在 5.2 之上）+ 同族归并 + 搜索。接管 DSH 原生模型选择器，只负责排序与导航，不接入任何 provider。",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "model-sorter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeidongTech/dsh-model-sorter.git"
+  },
+  "homepage": "https://github.com/WeidongTech/dsh-model-sorter#readme",
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}

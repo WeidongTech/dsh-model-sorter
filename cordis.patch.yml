@@ -1,0 +1,6 @@
+# dsh-model-sorter 补丁行：把排序插件挂进 profile。
+# Client 半接管 conversation.input.model 槽位，替换原生选择器；
+# Host 半为空实现（本插件不注册任何 provider）。
+- insert:
+    - id: model-sorter
+      name: 'dsh-model-sorter'
